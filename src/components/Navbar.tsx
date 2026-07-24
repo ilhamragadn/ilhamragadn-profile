@@ -11,8 +11,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r from-stone-800/80 to-neutral-800/80 via-gray-500/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-30 mx-4 rounded-b-lg shadow-lg">
-      <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between px-4 pt-1 pb-2">
+    <nav className="bg-linear-to-r from-stone-800/80 to-neutral-800/80 via-gray-500/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-30 mx-4 rounded-b-lg shadow-lg">
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 pt-1 pb-2">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <span className="text-2xl font-semibold text-white whitespace-nowrap">

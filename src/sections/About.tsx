@@ -10,10 +10,14 @@ const About = () => {
       <div className="flex justify-center items-center mx-8 mt-4 mb-12">
         <Card className="bg-white p-4 border border-gray-100">
           <p className="indent-8 italic tracking-tight">
-            An informatic engineering staff with two years of experience.
-            Focusing on website development especially on the front-end side.
-            Familiar with JavaScript programming language with React framework
-            both ReactJS or React Native for mobile application development.
+            With a background in fullstack web development using React
+            (TypeScript/JavaScript) and Laravel, I have developed a strong
+            understanding of how applications run in real-world environments. My
+            experience includes working with Linux servers via CLI and SSH for
+            remote management, along with networking and system configuration,
+            as well as hands-on exposure to endpoint management and security
+            practices in Windows environments. I’m currently growing toward
+            cloud technologies to support scalable and efficient systems.
           </p>
         </Card>
       </div>

@@ -5,7 +5,7 @@ import InstagramIcon from "../assets/icons/icons-instagram.svg?react";
 const Footer = () => {
   return (
     <footer id="connect" className="pt-14">
-      <div className="flex flex-col justify-center items-center bg-gradient-to-b from-gray-50 to bg-gray-800 via-30% via-gray-400/85 backdrop-blur-md py-12 space-y-2">
+      <div className="flex flex-col justify-center items-center bg-linear-to-b from-gray-50 to bg-gray-800 via-30% via-gray-400/85 backdrop-blur-md py-12 space-y-2">
         <h3 className="text-white text-2xl font-semibold tracking-tight underline underline-offset-2">
           Let's Connect.
         </h3>

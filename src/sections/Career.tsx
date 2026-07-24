@@ -29,7 +29,7 @@ const Career = () => {
               }`}
             >
               {/* Titik indikator pada garis timeline */}
-              <div className="absolute left-1/2 -ml-[9px] mt-6 w-4 h-4 bg-white border-4 border-sky-300 rounded-full" />
+              <div className="absolute left-1/2 -ml-2 mt-6 w-4 h-4 bg-white border-4 border-sky-300 rounded-full" />
 
               {/* Kontainer Card (kiri / kanan) */}
               <div
