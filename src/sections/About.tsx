@@ -22,7 +22,7 @@ const About = () => {
         </Card>
       </div>
 
-      <div className="grid grid-cols-2 gap-6 mx-8 mt-8 mb-12">
+      <div className="grid md:grid-cols-2 gap-6 mx-8 mt-8 mb-12">
         {/* HIMAKALA */}
         <div className="flex justify-center items-center">
           <video
@@ -31,7 +31,7 @@ const About = () => {
             loop
             muted
             playsInline
-            className="h-48 md:h-96 rounded-md shadow-md"
+            className="h-48 md:max-h-96 rounded-md shadow-md"
           />
         </div>
         <div className="flex flex-col justify-center items-center">
@@ -60,7 +60,7 @@ const About = () => {
         </div>
 
         {/* PENS */}
-        <div className="flex flex-col justify-center items-center">
+        <div className="order-2 md:order-1 flex flex-col justify-center items-center">
           <Card className="h-fit bg-white p-6 border border-gray-100 shadow-md rounded-md">
             <p className="text-center text-xl font-bold tracking-tight">
               Associate Degree of Informatic Engineering (2021-2024)
@@ -91,10 +91,10 @@ const About = () => {
             </div>
           </Card>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="order-1 md:order-2 flex justify-center items-center">
           <img
             src="./wisuda.jpg"
-            className="h-48 md:h-96 rounded-md shadow-md"
+            className="h-48 md:max-h-96 rounded-md shadow-md border"
             loading="lazy"
           />
         </div>

@@ -5,7 +5,7 @@ import JavaScriptIcon from "../assets/icons/icons-javascript.svg?react";
 import PHPIcon from "../assets/icons/icons-php.svg?react";
 import TypeScriptIcon from "../assets/icons/icons-typescript.svg?react";
 import TailwindIcon from "../assets/icons/icons-tailwindcss.svg?react";
-import ReactIcon from "../assets/icons/icons-react.svg?react";
+// import ReactIcon from "../assets/icons/icons-react.svg?react";
 import LaravelIcon from "../assets/icons/icons-laravel.svg?react";
 import MySQLIcon from "../assets/icons/icons-mysql.svg?react";
 import GithubIcon from "../assets/icons/icons-github.svg?react";
@@ -31,10 +31,10 @@ export const skillDatas: SkillItem[] = [
     title: "Tailwind",
     icon: (className) => <TailwindIcon className={className} />,
   },
-  {
-    title: "React",
-    icon: (className) => <ReactIcon className={className} />,
-  },
+  // {
+  //   title: "React",
+  //   icon: (className) => <ReactIcon className={className} />,
+  // },
   {
     title: "Laravel",
     icon: (className) => <LaravelIcon className={className} />,

@@ -16,7 +16,7 @@ const Project = () => {
         {projectDatas.map((project, index) => (
           <Card
             key={index}
-            className="w-80 h-fit flex-shrink-0 bg-white border border-gray-100 rounded-md shadow-md"
+            className="w-80 h-fit shrink-0 bg-white border border-gray-100 rounded-md shadow-md"
           >
             <img
               src="https://placehold.co/320x160"
