@@ -10,65 +10,163 @@ const Career = () => {
   }>({});
 
   const dropdownCareer = (index: number) => {
-    setIsDropdownOpen((prev) => ({ ...prev, [index]: !prev[index] }));
+    setIsDropdownOpen((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
   };
 
   return (
-    <section id="career" className="py-14">
+    <section id="career" className="py-10 md:py-14 mr-4">
+      {/* Title */}
       <div>
-        <p className="text-center text-2xl font-bold">Career</p>
+        <p className="text-center text-xl md:text-2xl font-bold">Career</p>
       </div>
 
-      <div className="flex justify-center mt-8">
-        <ol className="relative mb-10 w-full">
-          {timelineCareer.map((items, index) => (
-            <li
-              key={index}
-              className={`flex w-full ${
-                index % 2 === 0 ? "justify-start" : "justify-end"
-              }`}
-            >
-              {/* Titik indikator pada garis timeline */}
-              <div className="absolute left-1/2 -ml-2 mt-6 w-4 h-4 bg-white border-4 border-sky-300 rounded-full" />
+      {/* Timeline */}
+      <div className="relative mx-auto mt-8 w-full max-w-5xl">
+        {/* Garis Timeline */}
+        <div
+          className="
+            absolute
+            top-0
+            bottom-0
+            left-5
+            w-0.5
+            bg-gray-300
 
-              {/* Kontainer Card (kiri / kanan) */}
-              <div
-                className={`w-1/2 px-6 ${
-                  index % 2 === 0
-                    ? "border-r-2 border-gray-300"
-                    : "border-l-2 border-gray-300 mr-[1.02px]"
-                }`}
+            md:left-1/2
+            md:-translate-x-1/2
+          "
+        />
+
+        <ol className="relative space-y-6 md:space-y-0">
+          {timelineCareer.map((items, index) => {
+            const isLeft = index % 2 === 0;
+
+            return (
+              <li
+                key={index}
+                className="
+                  relative
+                  flex
+                  w-full
+                  items-start
+                  md:min-h-45
+                  md:items-center
+                "
               >
-                <Card className="px-8 py-4 my-4 bg-sky-700/85 shadow-lg rounded-md">
-                  <div className="flex items-center mb-1">
-                    <div className="flex-1">
-                      <time className="mb-1 text-sm text-white/80">
-                        {items.period}
-                      </time>
-                      <h3 className="text-xl font-semibold text-white">
-                        {items.title}
-                      </h3>
+                {/* Indicator */}
+                <div
+                  className="
+                    absolute
+                    left-5
+                    top-5
+                    z-10
+                    h-4
+                    w-4
+                    -translate-x-1/2
+                    rounded-full
+                    border-4
+                    border-sky-300
+                    bg-white
+
+                    md:left-1/2
+                    md:top-1/2
+                    md:-translate-x-1/2
+                    md:-translate-y-1/2
+                  "
+                />
+
+                {/* Card Container */}
+                <div
+                  className={`
+                    ml-10
+                    w-[calc(100%-2.5rem)]
+
+                    md:ml-0
+                    md:w-1/2
+                    md:pr-8
+
+                    ${!isLeft ? "md:ml-auto md:pl-8 md:pr-0" : ""}
+                  `}
+                >
+                  <Card
+                    className="
+                      rounded-md
+                      bg-sky-700/85
+                      px-3
+                      py-3
+                      shadow-lg
+
+                      sm:px-4
+                      md:px-8
+                      md:py-4
+                    "
+                  >
+                    {/* Header */}
+                    <div className="flex items-start gap-2">
+                      <div className="min-w-0 flex-1">
+                        <time className="block text-xs text-white/80 sm:text-sm">
+                          {items.period}
+                        </time>
+
+                        <h3 className="mt-0.5 text-base font-semibold leading-tight text-white sm:text-lg md:text-xl">
+                          {items.title}
+                        </h3>
+                      </div>
+
+                      <button
+                        type="button"
+                        aria-label={`Toggle ${items.title}`}
+                        onClick={() => dropdownCareer(index)}
+                        className="shrink-0"
+                      >
+                        <FontAwesomeIcon
+                          icon={faChevronCircleDown}
+                          className={`
+                            text-lg
+                            text-white
+                            transition-transform
+                            duration-300
+
+                            sm:text-xl
+                            md:text-2xl
+
+                            ${isDropdownOpen[index] ? "rotate-180" : "rotate-0"}
+                          `}
+                        />
+                      </button>
                     </div>
-                    <FontAwesomeIcon
-                      icon={faChevronCircleDown}
-                      size="2x"
-                      className={`text-white ms-2 transition-transform duration-300 ${
-                        isDropdownOpen[index] ? "rotate-180" : "rotate-0"
-                      }`}
-                      onClick={() => dropdownCareer(index)}
-                    />
-                  </div>
-                  {isDropdownOpen[index] && (
-                    <ul className="list-disc pl-4 text-white/80 text-justify tracking-tight leading-tight">
-                      {items.body.map((desc, i) => (
-                        <li key={i}>{Object.values(desc)[0]}</li>
-                      ))}
-                    </ul>
-                  )}
-                </Card>
-              </div>
-            </li>
-          ))}
+
+                    {/* Description */}
+                    {isDropdownOpen[index] && (
+                      <ul
+                        className="
+                          mt-3
+                          list-disc
+                          space-y-1
+                          pl-4
+                          text-left
+                          text-xs
+                          leading-relaxed
+                          tracking-tight
+                          text-white/80
+
+                          sm:text-sm
+                          md:text-base
+                        "
+                      >
+                        {items.body.map((desc, i) => (
+                          <li key={i}>{Object.values(desc)[0]}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </Card>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </div>
     </section>
